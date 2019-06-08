@@ -1,13 +1,12 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton'
 import { CardHeader } from '@material-ui/core';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
+
+import { showForm} from './store';
+import { connect } from 'react-redux';
 
 const styles = {
   card: {
@@ -27,32 +26,34 @@ const styles = {
   },
 };
 
-function handleAddEvent(date)
-{
-    console.log(date);
-}
-
 class DateCard extends React.Component {
-
-    
-    
     render() {
-        const {classes, date} = this.props;        
-
-    return (
-        <Card className={classes.card}>
-        <CardHeader size= "small"
-            action= {
-                <IconButton
-                onClick={() => handleAddEvent(this.props.date)}                >
-                <AddCircleOutline />
-                </IconButton>
-            }
-
-            title = {date}
-        />        
-        </Card>
-    )};
+        const {classes, date, onShowForm} = this.props; 
+      return (
+        <div>
+          <Card className={classes.card}>
+          <CardHeader size= "small"
+              action= {
+                  <IconButton
+                  onClick={onShowForm}>
+                  <AddCircleOutline />
+                  </IconButton>
+              }
+              title = {date}
+          />        
+          </Card>          
+          </div>
+      )};   
 }
 
-export default withStyles(styles)(DateCard);
+function mapDispatchToProps(dispatch) {
+  return{
+    onShowForm: () => dispatch(showForm())    
+  };
+}
+
+let styleCard = withStyles(styles)(DateCard);
+export default connect(
+  null,
+  mapDispatchToProps
+)(styleCard);

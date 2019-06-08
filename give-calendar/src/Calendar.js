@@ -43,7 +43,11 @@ class Calendar extends React.Component {
           Oct 1st is a Tuesday, so the first row sunday and monday columns should be 
           empty
           Oct 31st is a Thursday, so the last row Friday and Saturday Colums should be
-          empty */}
+          empty
+          
+          // TODO : Merge the two empty table cells using colspan and add an image 
+          as table cell data
+          */}
         <TableBody>
           <TableRow>
               <TableCell></TableCell>
@@ -94,7 +98,7 @@ class Calendar extends React.Component {
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableRow>
-
+          
         </TableBody>
       </Table>
     </Paper>

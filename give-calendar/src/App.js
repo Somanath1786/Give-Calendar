@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Provider} from 'react-redux';
 import './App.css';
 import MainPage from './MainPage';
+import store from './store'
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <Provider store={store}>       
+        <MainPage />
+      </Provider>                                
     </div>
   );
 }
