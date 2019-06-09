@@ -28,14 +28,14 @@ const styles = {
 
 class DateCard extends React.Component {
     render() {
-        const {classes, date, onShowForm} = this.props; 
+        const {classes, date} = this.props; 
       return (
         <div>
           <Card className={classes.card}>
           <CardHeader size= "small"
               action= {
                   <IconButton
-                  onClick={onShowForm}>
+                  onClick={() => this.props.dispatch(showForm(date))}>
                   <AddCircleOutline />
                   </IconButton>
               }
@@ -46,14 +46,8 @@ class DateCard extends React.Component {
       )};   
 }
 
-function mapDispatchToProps(dispatch) {
-  return{
-    onShowForm: () => dispatch(showForm())    
-  };
-}
-
 let styleCard = withStyles(styles)(DateCard);
 export default connect(
   null,
-  mapDispatchToProps
+  null
 )(styleCard);

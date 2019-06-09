@@ -13,13 +13,13 @@ class MainPage extends React.Component{
     }
 
     render(){
-        const {show, onHideForm} = this.props;
+        const {show, date, onHideForm} = this.props;
 
         // Decide whether you are showing the calendar or the form based on state
         var displayItem;
-        if (show.display === true)
+        if (show === true)
         {
-            displayItem = <ContactForm onSubmit={this.handleSubmit} onCancelForm = {onHideForm} />
+            displayItem = <ContactForm onSubmit={this.handleSubmit} onCancelForm = {onHideForm} date={date}/>
         }
         else
         {
@@ -35,9 +35,10 @@ class MainPage extends React.Component{
     }
 }
 
-function mapStateToProps(show) {
+function mapStateToProps(state) {
     return {
-      show: show,
+      show : state.myReducer.display,
+      date : state.myReducer.selectedDate
     };
 }
 

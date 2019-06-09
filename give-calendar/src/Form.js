@@ -2,21 +2,24 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
 let ContactForm = props => {
-  const { handleSubmit, onCancelForm} = props
-
+  const { handleSubmit, onCancelForm, date} = props  
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
+        <label htmlFor="Event Name">Event Name</label>
+        <Field name="Event Name" component="input" type="text" />
+      </div>      
+      <div>
+        <label htmlFor="Date">Date</label>
+        <input type="text" value={date} readOnly></input>       
       </div>
       <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
-      </div>
+        <label htmlFor="Time">Time</label>
+        <Field name="Time" component="input" type="text" />
+      </div>      
       <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
+        <label htmlFor="Designated Charity">Designated Charity</label>
+        <Field name="Designated Charity" component="input" type="text" />
       </div>
       <button type="submit">Submit</button>
       <button type="button" onClick={onCancelForm}> Cancel</button>
