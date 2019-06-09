@@ -2,7 +2,8 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
 let ContactForm = props => {
-  const { handleSubmit } = props
+  const { handleSubmit, onCancelForm} = props
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -18,6 +19,7 @@ let ContactForm = props => {
         <Field name="email" component="input" type="email" />
       </div>
       <button type="submit">Submit</button>
+      <button type="button" onClick={onCancelForm}> Cancel</button>
     </form>
   )
 }
