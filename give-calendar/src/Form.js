@@ -7,7 +7,7 @@ let ContactForm = props => {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="Event Name">Event Name</label>
-        <Field name="Event Name" component="input" type="text" />
+        <Field name="EventName" component="input" type="text" />
       </div>      
       <div>
         <label htmlFor="Date">Date</label>

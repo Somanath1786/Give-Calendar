@@ -21,14 +21,15 @@ export function calendarReducer(state = initState, action = {}) {
         case 'HIDE' :            
             return Object.assign({}, state, {
                 display: false,
-                selectedDate : state.selectedDate,
+                selectedDate : 0,
                 index: state.index,
                 events: state.events
             });
         case 'ADD' :            
             let newEvents = state.events.slice();
             let newIndex = state.index + 1;
-            newEvents.splice(newIndex, 0, action.data)
+            action.data.selectedDate = state.selectedDate;
+            newEvents.splice(newIndex, 0, action.data)            
             return Object.assign({}, state, {
                 display : false,
                 selectedDate : state.selectedDate,
@@ -66,7 +67,7 @@ export function hideForm() {
     };
 }
 
-export function addEvent(formData) {
+export function addEvent(formData) {    
     return {
         type: 'ADD',
         data: formData

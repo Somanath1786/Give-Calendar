@@ -8,9 +8,7 @@ class MainPage extends React.Component{
 
     handleSubmit(values, dispatch)
     {
-        //console.log(JSON.stringify(values));        
-        dispatch(addEvent(values));
-        //dispatch(hideForm());
+        dispatch(addEvent(values));        
     }
 
     render(){
