@@ -1,15 +1,16 @@
 import React from 'react'
 import Calendar from './Calendar';
 import ContactForm from './Form';
-import { hideForm} from './store';
+import { hideForm, addEvent } from './store';
 import { connect } from 'react-redux';
 
 class MainPage extends React.Component{
 
     handleSubmit(values, dispatch)
     {
-        console.log(JSON.stringify(values));        
-        dispatch(hideForm());
+        //console.log(JSON.stringify(values));        
+        dispatch(addEvent(values));
+        //dispatch(hideForm());
     }
 
     render(){
@@ -37,8 +38,8 @@ class MainPage extends React.Component{
 
 function mapStateToProps(state) {
     return {
-      show : state.myReducer.display,
-      date : state.myReducer.selectedDate
+      show : state.calendar.display,
+      date : state.calendar.selectedDate
     };
 }
 
