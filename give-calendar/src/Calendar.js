@@ -26,15 +26,15 @@ class Calendar extends React.Component {
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>        
-        <TableHead style={{backgroundColor : '#4FC3F7'}}>          
+        <TableHead style={{backgroundColor : '#A5D6A7'}}>          
           <TableRow>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Sunday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Monday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Tuesday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Wednesday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Thursday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Friday</TableCell>
-            <TableCell style= {{color : '#E53935', fontSize: '15pt'}}>Saturday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Sunday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Monday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Tuesday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Wednesday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Thursday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Friday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Saturday</TableCell>
           </TableRow>
         </TableHead>
 
