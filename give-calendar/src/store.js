@@ -8,7 +8,6 @@ const initState = {
     events : []
 }
 
-
 export function calendarReducer(state = initState, action = {}) {
     switch (action.type) {
         case 'SHOW' :            

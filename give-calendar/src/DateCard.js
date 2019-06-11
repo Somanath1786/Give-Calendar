@@ -7,6 +7,7 @@ import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
 
 import { showForm} from './store';
 import { connect } from 'react-redux';
+import SingleDayEvents from './SingleDayEvents';
 
 const styles = {
   card: {
@@ -27,21 +28,21 @@ const styles = {
 };
 
 class DateCard extends React.Component {
-    
-    getCardContent(events, date)
-    {
-      let cardContent = ""
-      events.forEach(function(event, index, array)
+  getTodaysEvents(date, events)
+  {
+    let todaysEvents = [];
+    events.forEach(function(event){
+      if (event.selectedDate === date)
       {
-        if(event.selectedDate === date)
-        cardContent = <button>{event.EventName}</button>;
-      })
-      return cardContent;
-    }
+        todaysEvents.push(event);
+      }
+    })
 
+    return todaysEvents;
+  }
     render() {
-        const {classes, date, events} = this.props;
-        let cardContent = this.getCardContent(events, date); 
+      const {classes, date, events} = this.props;
+      let todaysEvents = this.getTodaysEvents(date, events);  
       return (
         <div>
           <Card className={classes.card}>
@@ -55,7 +56,7 @@ class DateCard extends React.Component {
                 title = {date}
             />
             <CardContent>
-              {cardContent}
+              <SingleDayEvents date={date} todaysEvents = {todaysEvents}/>              
             </CardContent>        
           </Card>
         
@@ -64,9 +65,9 @@ class DateCard extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    events : state.calendar.events,    
-  };
+    return {
+      events : state.calendar.events
+    };
 }
 
 let styleCard = withStyles(styles)(DateCard);
