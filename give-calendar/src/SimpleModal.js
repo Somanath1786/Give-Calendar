@@ -23,7 +23,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
     width: 400,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#37474F',
+    color: 'white',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4),
     outline: 'none',
@@ -47,12 +48,12 @@ const SimpleModal = (props) => {
 
   return (
     <div>      
-      <Button onClick={handleOpen}>{eventName}</Button>
+      <Button style= {{backgroundColor : '#455A64', color: 'white'}} onClick={handleOpen}>{eventName}</Button>
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
         open={open}
-        onClose={handleClose}
+        onClose={handleClose}        
       >
         <div style={modalStyle} className={classes.paper}>
           <Typography variant="h6" id="modal-title">
@@ -63,7 +64,6 @@ const SimpleModal = (props) => {
               Time    : {time} <br/>
               Charity : {charity}               
           </Typography>
-          <SimpleModal />
         </div>
       </Modal>
     </div>

@@ -4,17 +4,32 @@ import ContactForm from './Form';
 import { hideForm, addEvent } from './store';
 import { connect } from 'react-redux';
 
-class MainPage extends React.Component{
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
+const styles = {
+    root: {
+        flexGrow: 1,      
+    },
+    appbar: {
+        alignItems: 'center',
+      } 
+  };
+
+class MainPage extends React.Component{    
+    // Event handler for onSubmit. Values is the Json representation of all the Fied components of the redux-form
+    // The redux form also provides a dispatch object which can then be used to dispatch events
     handleSubmit(values, dispatch)
     {
         dispatch(addEvent(values));        
     }
 
     render(){
-        const {show, date, onHideForm} = this.props;
+        const {classes, show, date, onHideForm} = this.props;
 
-        // Decide whether you are showing the calendar or the form based on state
+        // Conditionally display either the calendar surface or the form based on the state
         var displayItem;
         if (show === true)
         {
@@ -26,14 +41,21 @@ class MainPage extends React.Component{
         }
 
         return(
-            <div>
-                <h1> Give Campaign Calendar</h1>                
+            <div className ={classes.root}>
+                <AppBar className={classes.appbar} position="static" color="primary">
+                    <Toolbar>
+                        <Typography variant="h6" color="inherit">
+                            Give Campaign Calendar
+                        </Typography>
+                    </Toolbar>
+                </AppBar>               
                 {displayItem}
             </div>    
         )
     }
 }
 
+// Connect the redux store to react and map State and Dispatch as props
 function mapStateToProps(state) {
     return {
       show : state.calendar.display,
@@ -47,7 +69,8 @@ function mapDispatchToProps(dispatch) {
     };
   }
 
+const styledMainPage = withStyles(styles)(MainPage)  
 export default connect(
     mapStateToProps,
     mapDispatchToProps    
-)(MainPage);
+)(styledMainPage);
