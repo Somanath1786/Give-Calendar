@@ -56,6 +56,7 @@ class DateCard extends React.Component {
                 title = {date}
             />
             <CardContent>
+              {/* <SimpleModal /> */}
               <SingleDayEvents date={date} todaysEvents = {todaysEvents}/>              
             </CardContent>        
           </Card>

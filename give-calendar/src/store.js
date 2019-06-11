@@ -50,8 +50,7 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer);
 
-export function showForm(date) {    
-    console.log(store.getState());
+export function showForm(date) {
     return {
         type: 'SHOW',
         selectedDate : date  
@@ -59,7 +58,6 @@ export function showForm(date) {
 }
 
 export function hideForm() {
-    console.log(store.getState());
     return {
         type: 'HIDE',
         display: false

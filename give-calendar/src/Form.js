@@ -19,7 +19,7 @@ let ContactForm = props => {
       </div>      
       <div>
         <label htmlFor="Designated Charity">Designated Charity</label>
-        <Field name="Designated Charity" component="input" type="text" />
+        <Field name="DesignatedCharity" component="input" type="text" />
       </div>
       <button type="submit">Submit</button>
       <button type="button" onClick={onCancelForm}> Cancel</button>

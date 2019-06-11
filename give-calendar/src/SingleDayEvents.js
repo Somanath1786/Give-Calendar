@@ -1,14 +1,18 @@
 import React from 'react';
+import SimpleModal from './SimpleModal';
 
-class SingleDayEvents extends React.Component {
-    showData(event){
-       console.log(event);
-    }
+class SingleDayEvents extends React.Component {   
     render()
     {
         const eventButtons = this.props.todaysEvents.map((event, idx) => {
             return(
-                 <button onClick={() => this.showData(event)} key={idx}>{event.EventName}</button>
+                <SimpleModal key={idx}
+                 eventName={event.EventName}
+                 date={event.selectedDate}
+                 time={event.Time}
+                 charity ={event.DesignatedCharity}
+
+                 />                
             )
         })
         return(
