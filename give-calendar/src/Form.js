@@ -5,6 +5,8 @@ import { Field, reduxForm } from 'redux-form'
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import { CardHeader, CardContent } from '@material-ui/core';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 
 const styles = {
   card: {
@@ -32,22 +34,30 @@ let ContactForm = props => {
       <Card className={classes.card}>
       <CardHeader size= "small" title = "Please fill up Event Details"/>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="Event Name">Event Name</label>
-          <Field name="EventName" component="input" type="text" />
-        </div>      
-        <div>
-          <label htmlFor="Date">Date</label>
-          <input type="text" value={date} readOnly></input>       
-        </div>
-        <div>
+        <TableRow>
+          <TableCell> <label htmlFor="Event Name">Event Name</label> </TableCell>        
+          <TableCell> <Field name="EventName" component="input" type="text" /> </TableCell>
+        </TableRow>      
+        <TableRow>
+        <TableCell> <label htmlFor="Date">Date</label> </TableCell>
+        <TableCell> <input type="text" value={date} readOnly></input> </TableCell>  
+        </TableRow>
+        <TableRow>
+          <TableCell>
           <label htmlFor="Time">Time</label>
+          </TableCell>
+          <TableCell>
           <Field name="Time" component="input" type="text" />
-        </div>      
-        <div>
+          </TableCell>
+        </TableRow>      
+        <TableRow>
+          <TableCell>
           <label htmlFor="Designated Charity">Designated Charity</label>
+          </TableCell>
+          <TableCell>
           <Field name="DesignatedCharity" component="input" type="text" />
-        </div>
+          </TableCell>
+        </TableRow>
         <button type="submit">Submit</button>
         <button type="button" onClick={onCancelForm}> Cancel</button>
       </form>

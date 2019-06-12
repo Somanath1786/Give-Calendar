@@ -45,7 +45,7 @@ class MainPage extends React.Component{
                 <AppBar className={classes.appbar} position="static" color="primary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit">
-                            Give Campaign Calendar
+                            Give Campaign Calendar October 2019
                         </Typography>
                     </Toolbar>
                 </AppBar>               
