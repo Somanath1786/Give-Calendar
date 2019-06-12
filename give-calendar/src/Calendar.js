@@ -8,7 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import DateCard from './DateCard';
 
-const styles ={
+const styles = {
   root: {
     width: '100%',
     marginTop: 3,
@@ -25,17 +25,16 @@ class Calendar extends React.Component {
    
   return (
     <Paper className={classes.root}>
-      <Table className={classes.table}>
-        {/* Add the header row here. This row contains the days of the week */}
-        <TableHead>          
+      <Table className={classes.table}>        
+        <TableHead style={{backgroundColor : '#A5D6A7'}}>          
           <TableRow>
-            <TableCell>Sunday</TableCell>
-            <TableCell>Monday</TableCell>
-            <TableCell>Tuesday</TableCell>
-            <TableCell>Wednesday</TableCell>
-            <TableCell>Thursday</TableCell>
-            <TableCell>Friday</TableCell>
-            <TableCell>Saturday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Sunday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Monday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Tuesday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Wednesday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Thursday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Friday</TableCell>
+            <TableCell style= {{color : '#E64A19', fontSize: '15pt'}}>Saturday</TableCell>
           </TableRow>
         </TableHead>
 
@@ -48,7 +47,7 @@ class Calendar extends React.Component {
           // TODO : Merge the two empty table cells using colspan and add an image 
           as table cell data
           */}
-        <TableBody>
+        <TableBody style= {{backgroundColor : '#4DB6AC'}}>
           <TableRow>
               <TableCell></TableCell>
               <TableCell></TableCell>

@@ -28,6 +28,8 @@ const styles = {
 };
 
 class DateCard extends React.Component {
+
+  // Helper method to get all events for today
   getTodaysEvents(date, events)
   {
     let todaysEvents = [];
@@ -55,11 +57,10 @@ class DateCard extends React.Component {
                 }
                 title = {date}
             />
-            <CardContent>
+            <CardContent >              
               <SingleDayEvents date={date} todaysEvents = {todaysEvents}/>              
             </CardContent>        
           </Card>
-        
           </div>
       )};   
 }
